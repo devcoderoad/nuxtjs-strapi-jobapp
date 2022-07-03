@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 92,
+      "minLength": 5
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 256,
+      "minLength": 64
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "company"
+    }
+  }
+}
